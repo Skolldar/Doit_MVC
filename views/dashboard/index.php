@@ -6,7 +6,7 @@
         </a></p>
     <?php } else { ?>
             <ul class="listado-proyectos">
-                <?php foreach($proyectos as $proyecto) { ?>
+                <?php foreach($proyectos as $proyecto) { ?> 
                     <li class="proyecto">
                         <a href="/project?id=<?php echo $proyecto->url; ?>">
                             <?php echo $proyecto->proyecto; ?>

@@ -4,22 +4,25 @@
     <nav class="sidebar-nav">
         <div class="<?php echo ($title === 'Projects') ? 'activo' : ''; ?>">
         <div class="icon">
-        <i class="fa fa-suitcase" aria-hidden="true"></i>
-        <a href="/dashboard">Projects</a>
+        <a href="/dashboard">        
+            <i class="fa fa-suitcase fa-lg" aria-hidden="true"></i>
+            Projects</a>
         </div>
         </div>
 
         <div class="<?php echo ($title === 'Create Projects') ? 'activo' : ''; ?>">
         <div class="icon">
-        <i class="fa fa-pencil" aria-hidden="true"></i>
-        <a href="/create-projects">Create Projects</a>
+        <a href="/create-projects">
+        <i class="fa fa-pencil fa-lg" aria-hidden="true"></i>
+            Create Projects</a>
         </div>
         </div>
 
         <div class="<?php echo ($title === 'Profile') ? 'activo' : ''; ?>">
         <div class="icon">
-        <i class="fa fa-user-circle" aria-hidden="true"></i>
-        <a class="<?php ?>" href="/profile">Profile</a>
+        <a href="/profile">
+        <i class="fa fa-user-circle fa-lg" aria-hidden="true"></i>
+            Profile</a>
         </div>
         </div>
     </nav>

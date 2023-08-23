@@ -33,11 +33,25 @@
     }
 
     .proyecto {
+        margin-top: 5rem;
+        background-color: v.$naranja;
+        //background: linear-gradient(to bottom right, #dc7d4e 0%, #ffdd8d 100%);
         line-height: 2;
         min-height: 12rem;
         display: flex;
         align-items: center;
-        padding: 2rem;
-        
+        padding: 2rem;   
+        border-radius: 1rem;
+        &:hover {
+            background-color: darken(v.$morado, 10%);
+        }
+        a {
+            font-weight: bold;
+            font-size: 2rem;
+            color: v.$blanco;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
     }
 }

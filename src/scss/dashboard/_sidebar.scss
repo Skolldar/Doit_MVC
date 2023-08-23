@@ -2,8 +2,9 @@
 @use 'base/variables' as v;
 
 .sidebar {
-    background-color: v.$morado;
-    // background: linear-gradient(to top, #F1EAB9 0%, lighten(#ff0080, 20%) 90%);
+    background: linear-gradient(to bottom right, #fd80a8 0%, #fcce42 100%);
+
+    //background-color: v.$morado;
     padding: 4rem;
     border-radius: 2rem;
     
@@ -12,7 +13,7 @@
     }
 
     .sidebar-nav {
-        margin-top: 5rem;
+        margin-top: 6rem;
 
         .activo {
             &:hover,
