@@ -1,0 +1,21 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.confirmation {
+    margin-top: 5rem;
+    .doit {
+        @include m.textoDegradado(v.$verdeagua, v.$amarillo);
+    }
+
+    .acciones {
+        justify-content: center;
+
+        a {
+            background-color: v.$verde;
+            border-radius: 5rem;
+            color: v.$blanco;
+            padding: 2rem;
+        }
+    }
+
+}

@@ -1,0 +1,35 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.create {
+    margin-top: 5rem;
+    .doit {
+        @include m.textoDegradado(v.$morado, v.$darkrosa);
+    }
+    .contenedor-sm {
+        background: linear-gradient(to right, rgba(123, 9, 216, 0.322) 0%, rgba(219, 39, 120, 0.356) 100%);
+        backdrop-filter: blur(2rem); /* Efecto de desenfoque */
+        padding: 4rem;
+        border-radius: 1rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4); /* Sombra oscura */
+        text-align: center;
+
+        p {
+            margin-bottom: 0;
+        }
+    }
+
+    input[type="submit"] {
+        @include m.boton(v.$morado, v.$blanco);
+        border-radius: 2rem;
+    }
+
+    .acciones {
+        a {
+            background: linear-gradient(to right, v.$morado 0%, lighten(v.$darkrosa, 10%) 70%);
+            color: transparent;
+            background-clip: text;
+            font-weight: bold;
+        }
+    }
+}

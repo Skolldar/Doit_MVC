@@ -1,0 +1,18 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.message {
+    margin-top: 5rem;
+    .doit {
+        @include m.textoDegradado(v.$darkamarillo, v.$amarillo);
+    }
+
+    .contenedor-sm {
+        background-color: v.$naranja;
+        border-radius: 2rem;
+        p{
+            color: v.$blanco;
+        }
+    }
+
+}

@@ -1,0 +1,50 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.sidebar {
+    background-color: v.$morado;
+    // background: linear-gradient(to top, #F1EAB9 0%, lighten(#ff0080, 20%) 90%);
+    padding: 4rem;
+    border-radius: 2rem;
+    
+    .doit {
+        @include m.textoDegradado(v.$blanco, v.$grisClaro);
+    }
+
+    .sidebar-nav {
+        margin-top: 5rem;
+
+        .activo {
+            &:hover,
+            &.activo {
+                background-color: darken(v.$morado, 20%);
+                border-radius: 2rem;
+            } 
+        }
+
+        .icon {
+            display: flex;
+            align-items: baseline;
+            padding: 1.5rem;
+            transition-property: background-color;
+            margin-bottom: 2rem;
+
+            .fa {
+                margin-right: 1rem;
+                color: v.$blanco;
+            }
+            a {
+                color: v.$blanco;
+                font-weight: bold;
+                text-transform: uppercase;
+                display: block;
+            }
+            &:hover{
+                background-color: darken(v.$morado, 20%);
+                border-radius: 2rem;
+            } 
+
+        }  
+
+    }
+}
