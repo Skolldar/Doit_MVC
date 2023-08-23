@@ -1,6 +1,6 @@
 <div class="campo">
     <label for="proyecto">                
-    <i class="fa fa-pencil fa-lg" aria-hidden="true"></i>
+    <i class="fa fa-paperclip" aria-hidden="true"></i>
     </label>
     <input
         type="text"

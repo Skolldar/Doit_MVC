@@ -27,6 +27,9 @@
         @include m.boton(darken(v.$azul, 10%), v.$blanco);
         padding: 1.2rem;
         border-radius: 2rem;
+        a {
+            color: v.$blanco;
+        }
         &:hover::before {
             content: "Log out";
             margin-right: 1rem;

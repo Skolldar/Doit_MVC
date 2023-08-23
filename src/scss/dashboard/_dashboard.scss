@@ -35,7 +35,7 @@
         }
 
         input[type="submit"] {
-            @include m.boton(v.$esmeralda, v.$blanco);
+            @include m.boton(darken(v.$esmeralda, 10%), v.$blanco);
             border-radius: 5rem;
         }
     }

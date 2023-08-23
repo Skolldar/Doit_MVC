@@ -11,10 +11,11 @@ class DashboardController {
         isAuth();
 
         $id = $_SESSION['id'];
-        $proyectos = Proyecto::where('propietarioId', $id);
+        $proyectos = Proyecto::belongsTo('propietarioId', $id);
 
         $router->render('dashboard/index', [
-            'title' => 'Projects'
+            'title' => 'Projects',
+            'proyectos' => $proyectos
         ]);
     }
 

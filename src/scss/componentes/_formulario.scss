@@ -5,11 +5,11 @@
     margin-top: 5rem;
     .campo {
         display: flex;
-        align-items: center;
+        align-items: baseline;
         margin-bottom: 2rem;
 
         label {
-            flex: 0 0 5rem;
+            flex: 0 0 4rem;
         }
         input {
             flex: 1;
@@ -21,7 +21,8 @@
         }
     }
     .fa {
-        font-size: 2rem;
+        font-size: 3rem;
+        margin: 0;
         color: v.$lightnegro;
     }
 }

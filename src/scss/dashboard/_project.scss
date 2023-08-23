@@ -1,0 +1,18 @@
+@use 'base/mixins' as m;
+@use 'base/variables' as v;
+
+.no-proyectos {
+    display: flex;
+    align-items: baseline;
+    a {
+        @include m.boton(darken(v.$moradoClaro, 20%), v.$blanco);
+        padding: 1rem;
+        border-radius: 5rem;
+        margin-left: 2rem;
+        margin-top: 2rem;
+        &:hover::before {
+            content: "Create a Project";
+            margin-right: 1rem;
+        }
+    }
+}
