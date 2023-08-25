@@ -2,14 +2,12 @@
 @use 'base/variables' as v;
 
 .sidebar {
-    background: linear-gradient(to bottom right, #fd80a8 0%, #fcce42 100%);
-
-    //background-color: v.$morado;
+    background-color: v.$bluedianne;
     padding: 4rem;
     border-radius: 2rem;
     
     .doit {
-        @include m.textoDegradado(v.$blanco, v.$grisClaro);
+        @include m.textoDegradado(v.$grisClaro, v.$iceberg);
     }
 
     .sidebar-nav {
@@ -18,7 +16,7 @@
         .activo {
             &:hover,
             &.activo {
-                background-color: darken(v.$morado, 20%);
+                background-color: darken(v.$junglegreen, 10%);
                 border-radius: 2rem;
             } 
         }
@@ -32,16 +30,16 @@
 
             .fa {
                 margin-right: 1rem;
-                color: v.$blanco;
+                color: v.$conifer;
             }
             a {
-                color: v.$blanco;
+                color: v.$iceberg;
                 font-weight: bold;
                 text-transform: uppercase;
                 display: block;
             }
             &:hover{
-                background-color: darken(v.$morado, 20%);
+                background-color: darken(v.$junglegreen, 10%);
                 border-radius: 2rem;
             } 
 

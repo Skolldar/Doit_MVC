@@ -1,11 +1,9 @@
 @use 'base/mixins' as m;
 @use 'base/variables' as v;
 
-.barra {
-    background-color: v.$blanco;
-    padding: 1rem 2rem;
-    box-shadow: 1px 12px 9px -13px rgba(0, 0, 0, .4);
-    border-radius: 1rem;
+.barra {    
+    background:transparent;
+    padding: 0 2rem;
 
     @include m.tablet {
         display: flex;
@@ -14,25 +12,26 @@
     }
 
     p {
-        margin: 0;
+        margin-bottom: 2rem;
         font-size: 1.4rem;
 
         span {
-            font-weight: 700;
+            font-weight: bold;
             color: v.$naranja;
         }
     }
 
     .cerrar-sesion {
-        @include m.boton(darken(v.$azul, 10%), v.$blanco);
+        margin-bottom: 2rem;
+        &:hover::before {
+            content: "Log out";
+            margin-right: 1rem;
+        }
+        @include m.boton(v.$junglegreen, v.$blanco);
         padding: 1.2rem;
         border-radius: 2rem;
         a {
             color: v.$blanco;
-        }
-        &:hover::before {
-            content: "Log out";
-            margin-right: 1rem;
         }
     }
 }

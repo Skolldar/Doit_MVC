@@ -1,7 +1,6 @@
 <aside class="sidebar">
-    <h2 class="doit">Do-it</h2>
-
-    <nav class="sidebar-nav">
+        <h2 class="doit">Do-it</h2>
+        <nav class="sidebar-nav">
         <div class="<?php echo ($title === 'Projects') ? 'activo' : ''; ?>">
         <div class="icon">
         <a href="/dashboard">        
