@@ -17,7 +17,7 @@
 
         span {
             font-weight: bold;
-            color: v.$naranja;
+            color: v.$morado;
         }
     }
 
@@ -27,7 +27,7 @@
             content: "Log out";
             margin-right: 1rem;
         }
-        @include m.boton(v.$junglegreen, v.$blanco);
+        @include m.boton(v.$naranja, v.$blanco);
         padding: 1.2rem;
         border-radius: 2rem;
         a {
