@@ -58,8 +58,55 @@
                     modal.remove();
                 }, 500);
             }
+
+            if(e.target.classList.contains('submit-nueva-tarea')) {
+                submitFormularioNuevaTarea();
+            }
         });
 
-        document.querySelector('body').appendChild(modal);
+        document.querySelector('.dashboard').appendChild(modal);
     }
+
+    function submitFormularioNuevaTarea() {
+        const tarea = document.querySelector('#tarea').value.trim(); //elimina ambas direcciones los espacios
+        
+        if(tarea === '') {
+            //mostrar una alerta de error
+            mostrarAlerta('Task name is required', 'error', 
+            document.querySelector('.formulario legend'));
+            return;
+        }
+
+        agregarTarea(tarea);
+    }
+
+    // Mestra un mensaje en la interfaz
+    function mostrarAlerta(mensaje, tipo, referencia) {
+        //previene la creacion de varias alertas
+        const alertaPrevia = document.querySelector('.alerta');
+        if(alertaPrevia) {
+            alertaPrevia.remove();
+        }
+
+        const alerta = document.createElement('DIV');
+        alerta.classList.add('alerta', tipo);
+        alerta.textContent = mensaje;
+
+        //inserta la alerta antes del LEGEND
+        referencia.parentElement.insertBefore(alerta, referencia.nextElementSibling); 
+        //parentElement, lo coloca una posicion mas arriba lo que es el padre.
+        //nextElementSibling, se refiere al siguiente elemento dentro del padre que es conocido como hermano
+
+
+        //Eliminar la alerta despues de 5s
+        setTimeout(() => {
+            alerta.remove();
+        }, 5000);
+    }
+
+    //Consultar el servidor paara anadir una tarea al proyecto actual
+    function agregarTarea(tarea) {
+
+    }
+
  })(); // () hace que se ejecute inmediatamente
