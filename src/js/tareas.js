@@ -1,9 +1,49 @@
  // (function() {}); es un IIFE inmediatly invoque function expresion. protege el codigo y no se mezcle con otraa
 
  (function() {
+
+    obtenerTareas();
+
     //boton para mostrar el modal de agg tarea
     const nuevaTareaBtn = document.querySelector('#agregar-tarea');
     nuevaTareaBtn.addEventListener('click', mostrarFormulario);
+
+    async function obtenerTareas() {
+        try {
+            const id = obtenerProyecto();
+            const url = `/api/tareas?id=${id}`;
+            const respuesta = await fetch(url);
+            const resultado = await respuesta.json();
+
+            const {tareas} = resultado;
+
+            mostrarTareas(tareas);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    function mostrarTareas(tareas) {
+        if(tareass.length === 0) {
+            const contenedorTareas = document.querySelector('#listado-tareas');
+
+            const textoNoTareas = document.createElement('LI');
+            textoNoTareas.textContent = 'No hay Tareas';
+            textoNoTareas.classList.add('no-tareas');
+
+            contenedorTareas.appendChild(textoNoTareas);
+            return;
+        }
+
+        tareas.forEach(tarea => {
+            const contenedorTarea = document.createElement('LI');
+            contenedorTarea.dataset.tareaId = tarea.id;
+            contenedorTarea.classList.add('tarea');
+
+            const nombreTarea = document.createElement('P');
+            nombreTarea.textContent=tarea.nombre;
+        });
+    }
 
     function mostrarFormulario() {
         const modal = document.createElement('DIV');
