@@ -40,8 +40,8 @@ $router->get('/profile', [DashboardController::class, 'profile']);
 //Api para las tareas
 $router->get('/api/tareas', [TareaController::class, 'index']);
 $router->post('/api/tarea', [TareaController::class, 'crear']);
-$router->get('/api/tarea/actualizar', [TareaController::class, 'actualizar']);
-$router->get('/api/tarea/eliminar', [TareaController::class, 'eliminar']);
+$router->post('/api/tarea/actualizar', [TareaController::class, 'actualizar']);
+$router->post('/api/tarea/eliminar', [TareaController::class, 'eliminar']);
 
 
 
