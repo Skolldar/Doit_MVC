@@ -34,8 +34,7 @@
 
     .proyecto {
         margin-top: 5rem;
-        background-color: v.$cyan;
-        //  background: linear-gradient(to bottom right, v.$naranja 0%, #fcce42 100%);
+        background-color: v.$tradewind;
         line-height: 2;
         min-height: 12rem;
         display: flex;
@@ -43,12 +42,12 @@
         padding: 2rem;   
         border-radius: .5rem;
         &:hover {
-            background-color: v.$indigo;
+            background-color: darken(v.$junglegreen, 10%);
         }
         a {
             font-weight: bold;
             font-size: 2rem;
-            color: v.$iceberg;
+            color: v.$blanco;
             display: flex;
             justify-content: center;
             width: 100%;
