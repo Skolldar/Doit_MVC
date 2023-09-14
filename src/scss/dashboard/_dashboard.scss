@@ -2,7 +2,7 @@
 @use 'base/variables' as v;
 
 .dashboard {
-    padding: 2rem;
+    padding: 1rem 0 1rem 1rem;
     //background-color: v.$naranja;
     background: linear-gradient(to bottom right, v.$blanco 0%, v.$grisClaro 100%);
 
@@ -14,6 +14,7 @@
 
     .principal {
         flex: 1;
+        overflow: scroll;
     }
 
     .contenido {
