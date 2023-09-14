@@ -3,6 +3,7 @@
  (function() {
 
     obtenerTareas();
+    let tareas = [];
 
     //boton para mostrar el modal de agg tarea
     const nuevaTareaBtn = document.querySelector('#agregar-tarea');
@@ -15,15 +16,15 @@
             const respuesta = await fetch(url);
             const resultado = await respuesta.json();
 
-            const {tareas} = resultado;
-
-            mostrarTareas(tareas);
+            tareas = resultado.tareas;
+            mostrarTareas();
         } catch (error) {
             console.log(error);
         }
     }
 
-    function mostrarTareas(tareas) {
+    function mostrarTareas() {
+        limpiarTareas(); 
         if(tareas.length === 0) {
             const contenedorTareas = document.querySelector('#listado-tareas');
 
@@ -58,6 +59,11 @@
             btnEstadoTarea.classList.add(`${estados[tarea.estado].toLowerCase()}`);
             btnEstadoTarea.textContent = estados[tarea.estado];
             btnEstadoTarea.dataset.estadoTarea = tarea.estado;
+
+            //doble click al estado
+            btnEstadoTarea.ondblclick = function () {
+                cambiarEstadoTarea({...tarea});
+            }
 
             //BOTON ELIMINAR
             const btnEliminarTarea = document.createElement('BUTTON');
@@ -202,16 +208,48 @@
                 const modal = document.querySelector('.modal');
                 setTimeout(() => {
                     modal.remove();
-                }, 3000);
+                }, 2000);
+
+                //AGREGAR el objeto de tareas al globarl de tareas
+                const tareaObj = {
+                    id: String(resultado.id),
+                    nombre: tarea,
+                    estado: "0",
+                    proyectoId: resultado.proyectoId
+                }
+
+                tareas = [...tareas, tareaObj]; //hace una copia y lo agg
+                mostrarTareas();
             }
         } catch (error) {
             console.log(error);
-        }
+        } 
     }
+
+    function cambiarEstadoTarea(tarea) {
+        const nuevoEstado = tarea.estado === "1" ? "0" : "1";
+        tarea.estado = nuevoEstado;
+        actualizarTarea();
+    }
+
+    function actualizarTarea(tarea) {
+        
+    }
+
     function obtenerProyecto() {
         const proyectoParams = new URLSearchParams(window.location.search);
         const proyecto = Object.fromEntries(proyectoParams.entries());
         return proyecto.id;
     }
+
+    function limpiarTareas() {
+        const listadoTareas = document.querySelector('#listado-tareas');
+
+        //Es mucho mas rapido el limpiado 
+        while(listadoTareas.firstChild) {
+            listadoTareas.removeChild(listadoTareas.firstChild);
+        }
+
+}
 
  })(); // () hace que se ejecute inmediatamente

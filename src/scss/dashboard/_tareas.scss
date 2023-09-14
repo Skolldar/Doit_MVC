@@ -23,16 +23,18 @@
 }
 
 .tarea {
-    padding:  .5rem 2rem;
-    border-bottom: 2px solid darken(v.$grisClaro, 5%);
-    margin-bottom: 1rem;
+    padding:  1rem 2.5rem;
+    border: 1px solid darken(v.$grisClaro, 5%);
+    box-shadow: 1px 12px 9px -13px rgba(0, 0, 0, .4);
+    border-radius: .5rem;
+    margin-bottom: 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    &:last-of-type{
-        border: none;
-    } 
+    //&:last-of-type{
+   //     border: none;
+    //} 
 
     p {
         font-size: 1.4rem;
@@ -40,15 +42,15 @@
 
     .opciones {
         display: flex;
-        gap: 1rem;
+        gap: 1.5rem;
 
         button {
             border: none;
-            font-size: .9rem;
-            padding: .5rem 1rem;
+            font-size: 1rem;
+            padding: .8rem 1rem;
             text-transform: uppercase;
             font-weight: 700;
-            border-radius: 1rem;
+            border-radius: 2rem;
 
             &:hover {
                 cursor: pointer;
@@ -63,11 +65,19 @@
         .pendiente {
             background-color: v.$naranja;
             color: v.$blanco;
+            &:hover {
+                cursor: pointer;
+                background-color: v.$darknaranja;
+            }
         }
 
         .eliminarTarea {
-            background-color: v.$rojo;
+            background-color: v.$rojobrillante;
             color: v.$blanco;
+            &:hover {
+                cursor: pointer;
+                background-color: v.$rojo;
+            }
         }
     }
 }
