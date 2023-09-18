@@ -71,6 +71,10 @@
             btnEliminarTarea.dataset.idTarea = tarea.id;
             btnEliminarTarea.textContent = 'Eliminar';
 
+            btnEliminarTarea.ondblclick = function () {
+                confirmarEliminarTarea({...tarea});
+            }
+
             //AGREGARlo a la PANTALLA
             opcionesDiv.appendChild(btnEstadoTarea);
             opcionesDiv.appendChild(btnEliminarTarea);
@@ -266,14 +270,55 @@
                     }
 
                     return tareaMemoria;
-                }); 
+                });  
 
-                mostrarTareas();x
+                mostrarTareas();
             }
         } catch (error) {
             console.log(error);
         }
     }
+
+    function confirmarEliminarTarea(tarea) {
+        Swal.fire({
+            title: 'Do you want to delete?',
+            showCancelButton: true,
+            confirmButtonText: 'Yes',
+            cancelButtonText: 'No'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                eliminarTarea(tarea);
+            }
+          })
+        }
+
+        async function eliminarTarea(tarea) {
+            const {estado, id, nombre} = tarea;
+
+            const datos = new FormData();
+            datos.append('id', id);
+            datos.append('nombre', nombre);
+            datos.append('estado', estado);
+            datos.append('proyectoId', obtenerProyecto());
+
+            try {
+                const url = 'http://localhost:3000/api/tarea/eliminar';
+                const respuesta = await fetch(url, {
+                    method: 'POST',
+                    body: datos
+                });
+                const resultado = await respuesta.json(); 
+
+                if(resultado.resultado) {
+                    swal.fire('Deleted!', resultado.mensaje, 'success');
+
+                        tareas = tareas.filter(tareaMemoria => tareaMemoria.id !== tarea.id);
+                        mostrarTareas();
+                }
+            } catch (error) {
+                
+            }
+        }
 
     function obtenerProyecto() {
         const proyectoParams = new URLSearchParams(window.location.search);
