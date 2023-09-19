@@ -2,14 +2,68 @@
 @use 'base/variables' as v;
 
 .sidebar {
+    opacity: 0;
     background: linear-gradient(to bottom, v.$coral, v.$rosaClaro);
-    //background-color: #F4999B;
-    padding: 4rem;
-    border-radius: 2rem;
-    
-    .doit {
-        @include m.textoDegradado(v.$blanco, v.$grisClaro);
+    height: 0;
+    overflow: hidden;
+    transition-property: opacity;
+    transition-duration: 500ms;
+
+
+    &.mostrar {
+        opacity: 1;
+        display: block;
+        padding: 4rem;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        @include m.tablet {
+            display: none;
+        }
     }
+
+    &.ocultar { //animacion para el remover
+        opacity: 0;
+    }
+
+    @include m.tablet {
+        height:100%;
+        opacity: 1;
+        border-radius: 2rem;
+        padding: 4rem;
+        background-color: linear-gradient(to bottom, v.$coral, v.$rosaClaro);
+        }
+    
+    .contenedor-sidebar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .doit {
+            color: v.$blanco;
+            font-size: 10rem;
+            margin: 0;
+            text-align: center;
+        }
+
+        .cerrar-menu {
+            display: flex;
+            justify-content: center;
+            height: 2rem;
+            width: 2rem;
+            img {
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+            @include m.tablet {
+                display: none;
+            }
+        }
+    }
+
 
     .sidebar-nav {
         margin-top: 6rem;
@@ -34,6 +88,7 @@
                 color: v.$amarillo;
             }
             a {
+                text-align: center;
                 color: v.$blanco;
                 font-weight: bold;
                 text-transform: uppercase;
@@ -43,8 +98,17 @@
                 background-color: darken(v.$azulbebe, 20%);
                 border-radius: 2rem;
             } 
+        } 
+    }
+    .cerrar-sesion-mobile {
+        margin-top: 10rem;
+        .cerrar-sesion {
+            @include m.boton(v.$naranja, v.$blanco);
+            border-radius: 5rem;
+        }
 
-        }  
-
+        @include m.tablet {
+            display: none;
+        }
     }
 }

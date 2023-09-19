@@ -1,14 +1,42 @@
 @use 'base/mixins' as m;
 @use 'base/variables' as v;
 
-.barra {    
-    background:transparent;
-    padding: 0 2rem;
+.barra-mobile {
+    background: linear-gradient(to bottom, v.$coral, v.$rosaClaro);
+    padding: 2rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include m.tablet {
+        display: none;
+    }
+
+    h1 {
+        color: v.$blanco;
+        margin: 0;
+    }
+
+    .menu {
+        img {
+            width: .8rem;
+            &:hover {
+                cursor: pointer;
+            }
+
+        }
+    }
+}
+
+
+.barra { 
+    display: none;
 
     @include m.tablet {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        background:transparent;
+        padding: 0 2rem;
     }
 
     p {

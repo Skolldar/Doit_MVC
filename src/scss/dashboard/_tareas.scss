@@ -23,7 +23,10 @@
 }
 
 .tarea {
-    padding:  1rem 2.5rem;
+    @include m.tablet {
+        padding:  1rem 2.5rem;
+    }
+    padding: .5rem 1rem;
     border: 1px solid darken(v.$grisClaro, 5%);
     box-shadow: 1px 12px 9px -13px rgba(0, 0, 0, .4);
     border-radius: .5rem;
@@ -38,11 +41,15 @@
 
     p {
         font-size: 1.4rem;
+        margin-right: .5rem;
     }
 
     .opciones {
         display: flex;
-        gap: 1.5rem;
+        gap: 1rem;
+        @include m.tablet {
+            gap: 1.5rem;
+        }
 
         button {
             border: none;
