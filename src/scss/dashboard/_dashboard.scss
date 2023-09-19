@@ -43,5 +43,12 @@
         }
     }
 
+    .enlace {
+        color: v.$morado;
+        &:hover {
+            color: darken(v.$morado, 20%);
+            font-weight: 600;
+        }
+    }
     
 }
