@@ -20,7 +20,8 @@
     .tarea p,
     .filtros .campo,
     .modal .formulario legend,
-    .barra p span {
+    .barra p span,
+    p {
         color: v.$lightgris;
     }
 
@@ -133,6 +134,13 @@
 
         &:hover {
             background-color: darken(v.$rojo, 10%);
+        }
+    }
+
+    .no-proyectos a {
+        background-color: darken(v.$moradoClaro, 40%);
+        &:hover {
+            background-color: darken(v.$moradoClaro, 60%);
         }
     }
 
