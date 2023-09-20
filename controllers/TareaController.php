@@ -36,7 +36,7 @@ class TareaController {
             if(!$proyecto || $proyecto->propietarioId !== $_SESSION['id']) {
                 $respuesta = [
                     'tipo' => 'error',
-                    'mensaje' => 'Hubo un Error al agregar la tarea'
+                    'mensaje' => 'There was an error adding the task'
                 ];
                 echo json_encode($respuesta);
                 return;
@@ -49,7 +49,7 @@ class TareaController {
             $respuesta = [
                 'tipo' => 'exito',
                 'id' => $resultado['id'],
-                'mensaje' => 'Tarea Creada Correctamente',
+                'mensaje' => 'Successfully Created Task',
                 'proyectoId' => $proyecto->id
             ];
             echo json_encode($respuesta);
@@ -67,7 +67,7 @@ class TareaController {
             if(!$proyecto || $proyecto->propietarioId !== $_SESSION['id']) {
                 $respuesta = [
                     'tipo' => 'error',
-                    'mensaje' => 'Hubo un Error al actualizar la tarea'
+                    'mensaje' => 'There was an error updating the task'
                 ];
                 echo json_encode($respuesta);
                 return;
@@ -82,7 +82,7 @@ class TareaController {
                     'tipo' => 'exito',
                     'id' => $tarea->id,
                     'proyectoId' => $proyecto->id,
-                    'mensaje' => 'Actualizado correctamente'
+                    'mensaje' => 'Successfully updated'
                 ];
                 echo json_encode(['respuesta' => $respuesta]);
             }
@@ -100,7 +100,7 @@ class TareaController {
             if(!$proyecto || $proyecto->propietarioId !== $_SESSION['id']) {
                 $respuesta = [
                     'tipo' => 'error',
-                    'mensaje' => 'Hubo un Error al eliminar la tarea'
+                    'mensaje' => 'There was an error deleting the task'
                 ];
                 echo json_encode($respuesta);
                 return;
