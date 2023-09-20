@@ -2,10 +2,8 @@
 @use 'base/variables' as v;
 
 .dashboard {
-    padding: 1rem 0 1rem 1rem;
-    //background-color: v.$naranja;
-    background: linear-gradient(to bottom right, v.$blanco 0%, v.$grisClaro 100%);
-
+    padding: 1rem;
+    background-color: v.$grisClaro;
 
     @include m.tablet {
         display: flex;

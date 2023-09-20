@@ -3,10 +3,10 @@
     <?php include_once __DIR__ . '/../templates/nombre-sitio.php'; ?>
 
     <div class="contenedor-sm">
+    <p class="descripcion-pagina">Recover your access Do-it</p>
 
     <?php include_once __DIR__ . '/../templates/alertas.php'; ?>
 
-        <p class="descripcion-pagina">Recover your access Do-it</p>
         <form class="formulario" method="POST" action="/forget" novalidate>
             <div class="campo">
                 <label for="email">                

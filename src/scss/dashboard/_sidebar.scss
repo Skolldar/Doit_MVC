@@ -3,7 +3,7 @@
 
 .sidebar {
     opacity: 0;
-    background: linear-gradient(to bottom, v.$coral, v.$rosaClaro);
+    background: linear-gradient(to bottom, v.$coral 0%, v.$rosaClaro 100%);    
     height: 0;
     overflow: hidden;
     transition-property: opacity;
@@ -20,6 +20,7 @@
         left: 0;
         right: 0;
         bottom: 0;
+        background-color: rgb( 0 0 0 / .90);
         @include m.tablet {
             display: none;
         }
@@ -42,10 +43,14 @@
         justify-content: space-between;
         align-items: center;
         .doit {
+            font-size: 6rem;
             color: v.$blanco;
-            font-size: 10rem;
             margin: 0;
             text-align: center;
+
+            @include m.tablet {
+                font-size: 10rem;
+            }
         }
 
         .cerrar-menu {

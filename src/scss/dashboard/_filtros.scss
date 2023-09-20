@@ -8,6 +8,7 @@
     padding: 2rem;
 
     .filtros-inputs {
+        text-align: center;
         @include m.tablet {
             display: flex;
             align-items: center;

@@ -2,7 +2,7 @@
 @use 'base/variables' as v;
 
 .barra-mobile {
-    background: linear-gradient(to bottom, v.$coral, v.$rosaClaro);
+    background-color: v.$coral;
     padding: 2rem 4rem;
     display: flex;
     justify-content: space-between;
